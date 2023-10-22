@@ -1,0 +1,263 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvjk7k80d83j"]
+
+[ext_resource type="Script" path="res://profiller.tres.gd" id="1_8g260"]
+[ext_resource type="Script" path="res://addons/SliderLabel/SliderLabel.gd" id="1_dxurn"]
+[ext_resource type="Texture2D" uid="uid://bndqdyulcd85m" path="res://bg.tres" id="2_bbrnx"]
+[ext_resource type="Texture2D" uid="uid://4nijudo4be8l" path="res://elvisish.png" id="3_eem3n"]
+[ext_resource type="Script" path="res://MenuButton.gd" id="5_fylw7"]
+
+[sub_resource type="Animation" id="Animation_1a0mr"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elvisish:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elvisish2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Elvisish3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Elvisish4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xe6hn"]
+_data = {
+"new_animation": SubResource("Animation_1a0mr")
+}
+
+[node name="Node" type="Node"]
+script = ExtResource("1_8g260")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bbrnx")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -218.0
+offset_right = 71.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Start"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave][center]CURRENTLY COMPUTING[/center][/wave]"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -473.0
+offset_top = -417.0
+offset_right = 473.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 806.0
+offset_top = 80.0
+offset_right = 904.0
+offset_bottom = 223.0
+allow_reselect = true
+auto_height = true
+item_count = 5
+item_0/text = "Script"
+item_1/text = "Function"
+item_2/text = "Autoload"
+item_3/text = "Project"
+item_4/text = "Static Var"
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 87.0
+offset_top = 162.0
+offset_right = 479.655
+offset_bottom = 178.0
+max_value = 2e+06
+step = 100.0
+value = 1e+06
+
+[node name="Label2" type="Label" parent="HSlider"]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 95.0
+offset_bottom = -4.0
+size_flags_horizontal = 4
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_dxurn")
+visibility_rule = 3
+metadata/_edit_initialized_ = true
+
+[node name="testamount" type="Label" parent="HSlider"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 95.0
+offset_bottom = 43.0
+text = "test amount"
+
+[node name="Elvisish" type="Sprite2D" parent="."]
+position = Vector2(54, 589)
+scale = Vector2(0.332031, 0.326843)
+texture = ExtResource("3_eem3n")
+
+[node name="Elvisish2" type="Sprite2D" parent="."]
+position = Vector2(1102, 51)
+scale = Vector2(0.332031, 0.326843)
+texture = ExtResource("3_eem3n")
+
+[node name="Elvisish3" type="Sprite2D" parent="."]
+position = Vector2(53, 53)
+scale = Vector2(0.332031, 0.326843)
+texture = ExtResource("3_eem3n")
+
+[node name="Elvisish4" type="Sprite2D" parent="."]
+position = Vector2(1100, 589)
+scale = Vector2(0.332031, 0.326843)
+texture = ExtResource("3_eem3n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "new_animation"
+speed_scale = 0.05
+libraries = {
+"": SubResource("AnimationLibrary_xe6hn")
+}
+
+[node name="MenuButton" type="MenuButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 433.0
+offset_top = -8.0
+offset_right = 621.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "About"
+item_count = 4
+popup/item_0/text = "A dumb benchmarker by Elvisish"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "http://www.brilliancegames.com"
+popup/item_1/id = 1
+popup/item_2/text = "or"
+popup/item_2/id = 2
+popup/item_2/separator = true
+popup/item_3/text = "http://www.spyonthewall.net"
+popup/item_3/id = 3
+script = ExtResource("5_fylw7")
+
+[node name="testamount2" type="Label" parent="."]
+offset_left = 910.0
+offset_top = 56.0
+offset_right = 1045.0
+offset_bottom = 82.0
+text = "average averages"
+
+[node name="script_average" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 915.0
+offset_top = 82.0
+offset_right = 955.0
+offset_bottom = 105.0
+
+[node name="function_average" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 915.0
+offset_top = 112.0
+offset_right = 980.0
+offset_bottom = 138.0
+
+[node name="autoload_average" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 915.0
+offset_top = 139.0
+offset_right = 980.0
+offset_bottom = 165.0
+
+[node name="project_average" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 915.0
+offset_top = 167.0
+offset_right = 980.0
+offset_bottom = 193.0
+
+[node name="staticvar_average" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 915.0
+offset_top = 193.0
+offset_right = 980.0
+offset_bottom = 219.0
+
+[node name="export" type="LinkButton" parent="."]
+offset_left = 1057.0
+offset_top = 228.0
+offset_right = 1161.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 25
+text = "Export!"
+
+[connection signal="button_down" from="LinkButton" to="." method="_on_link_button_button_down"]
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="button_down" from="export" to="." method="_on_export_button_down"]
